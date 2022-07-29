@@ -1,0 +1,23 @@
+.header-main-container{
+  background-color: #66BFBF;
+  nav{
+    padding: 1% 4%;
+    .container-fluid{
+      .navbar-toggler{
+        color: #000;
+        border-color: #000;
+      }
+      .collapse, .navbar-collapse{
+        flex-direction: row-reverse;
+        a{
+          font-weight: 600;
+          color: #000;
+        }
+        .active-menu{
+          border-bottom: 2px solid #FFF;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
