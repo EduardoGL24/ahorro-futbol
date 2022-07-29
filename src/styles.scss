@@ -1,3 +1,21 @@
 .row, .container-fluid{
   --bs-gutter-x: 0;
 }
+
+.main-container{
+  padding: 7% 4% 3% 4%;
+  min-height: 91vh;
+}
+
+.bg-primary-color-app{
+  background-color: #FF0063;
+  color: #FFF;
+  &:hover{
+    background-color: #FF0063;
+    color: #FFF;
+  }
+  &:focus{
+    background-color: #FF0063;
+    border-color: #FFF;
+  }
+}
