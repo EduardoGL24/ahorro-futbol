@@ -1,0 +1,21 @@
+.main-container{
+  height: 91vh;
+  padding: 17% 25%;
+  background-color: #EAF6F6;
+  h2{
+    font-size: 2.5rem;
+  }
+  p{
+    font-size: 1.25rem;
+  }
+  a{
+    background-color: #FF0063;
+    color: #FFF;
+    &:hover{
+      border-color: #EAF6F6;
+    }
+    &:focus{
+      border-color: #EAF6F6;
+    }
+  }
+}
