@@ -1,35 +1,41 @@
 <div class="main-container">
-  <div class="title-container">
-    <h1>Crear meta</h1>
-    <p>Aquí podras configurar una meta de ahorro dependiendo tus objetivos.</p>
+  <div class="goal-main-container" *ngIf="!showRule">
+    <div class="title-container">
+      <h1>Crear meta</h1>
+      <p>Aquí podras configurar una meta de ahorro dependiendo tus objetivos.</p>
+    </div>
+    <form>
+      <div class="row mb-4">
+        <label class="col-sm-2 col-form-label">Tipo de meta</label>
+        <div class="col-sm-10">
+          <select class="form-select">
+            <option selected disabled>Meta</option>
+            <option>Comprar algo</option>
+            <option>Viajar</option>
+            <option>Hacer algo</option>
+            <option>Solo ahorrar</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <label class="col-sm-2 col-form-label">Fecha</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control">
+        </div>
+      </div>
+      <div class="row mb-5">
+        <label class="col-sm-2 col-form-label">Monto</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control">
+        </div>
+      </div>
+    </form>
   </div>
-  <form>
-    <div class="row mb-4">
-      <label for="inputState" class="col-sm-2 col-form-label">Tipo de meta</label>
-      <div class="col-sm-10">
-        <select id="inputState" class="form-select">
-          <option selected disabled>Meta</option>
-          <option>Comprar algo</option>
-          <option>Viajar</option>
-          <option>Hacer algo</option>
-          <option>Solo ahorrar</option>
-        </select>
-      </div>
-    </div>
-    <div class="row mb-4">
-      <label for="inputState" class="col-sm-2 col-form-label">Fecha</label>
-      <div class="col-sm-10">
-        <input type="date" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-    </div>
-    <div class="row mb-5">
-      <label for="inputState" class="col-sm-2 col-form-label">Monto</label>
-      <div class="col-sm-10">
-        <input ng-pattern="/^[0-9]{1,8}$/" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-    </div>
-  </form>
+  <div class="rule-container" *ngIf="showRule">
+    <app-create-rule></app-create-rule>
+  </div>
   <div class="text-end">
-    <button type="submit" class="btn bg-primary-color-app">Siguiente</button>
+    <button *ngIf="showRule" type="button" class="btn btn-secondary" (click)="showRule = !showRule">Regresar</button>
+    <button type="button" class="btn bg-primary-color-app" (click)="showRule = !showRule">Siguiente</button>
   </div>
 </div>
